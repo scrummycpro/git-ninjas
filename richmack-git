@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# richmack-git-create
+# Initialize a new Git repository
+git init
+
+# Add all files to the repository
+git add -A
+
+# Commit the changes with an initial commit message
+git commit -m "Initial commit"
+
+# Create a new GitHub repository with the given name
+# Set the repository as public
+# Set the current directory as the source
+# Set the upstream remote repository
+# Push the changes to the remote repository
+gh repo create "$1" --public --source=. --remote=upstream --push
+
+# Create a new README.md file
+touch README.md
